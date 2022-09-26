@@ -11,21 +11,18 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
  
  extract($_POST);
 
-  $q = $db->prepare('SELECT id FROM membre WHERE nom = :nom, numpaie = :numpaie');
-  $q1 = $db->prepare('SELECT numpaie FROM paiement_projet');
+  $q = $db->prepare('SELECT id FROM membre WHERE nom = :nom and numpaie = :numpaie');
+  //$q1 = $db->prepare('SELECT numpaie FROM membre');
 
   $q->execute([
-    'nom' => $nom
-  ]);
-  
-  $q1->execute([
+    'nom' => $nom,
     'numpaie' => $numpaie
   ]);
+  
 
   $userbeen = $q->rowCount();
-  $numbeen = $q1->rowCount();
 
-  if($userbeen and $numbeen){
+  if($userbeen){
     redirect('profil.php?id=');
   }else{
     $errors[]="Combinaison Username/Numero paiement incorrecte!";
@@ -33,6 +30,7 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
   }
     } else{
       $errors[]="Veuillez remplir tous les champs SVP";
+      saveInput();
     }
   } 
 
