@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include('filtre/guest_filter.php');
   require('config/database.php');
   require('include/functions.php');
 
@@ -11,19 +12,22 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
  
  extract($_POST);
 
-  $q = $db->prepare('SELECT id FROM membre WHERE nom = :nom and numpaie = :numpaie');
-  //$q1 = $db->prepare('SELECT numpaie FROM membre');
+  $q = $db->prepare('SELECT id, nom FROM membre 
+  WHERE nom = :nom and numpaie = :numpaie');
 
   $q->execute([
     'nom' => $nom,
     'numpaie' => $numpaie
   ]);
-  
 
   $userbeen = $q->rowCount();
 
   if($userbeen){
-    redirect('profil.php?id=');
+    $user = $q->fetch(PDO::FETCH_OBJ);
+    $_SESSION['user_id'] = $user->id;
+    $_SESSION['nom'] = $user->nom;
+
+    redirect('profil.php');
   }else{
     $errors[]="Combinaison Username/Numero paiement incorrecte!";
     saveInput();
@@ -31,6 +35,7 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
     } else{
       $errors[]="Veuillez remplir tous les champs SVP";
       saveInput();
+      clearInput();
     }
   } 
 

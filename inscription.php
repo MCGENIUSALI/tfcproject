@@ -2,6 +2,7 @@
 
 <?php
 session_start();
+include('filtre/guest_filter.php');
 require('include/constants.php');
 require('config/database.php');
 require('include/functions.php');

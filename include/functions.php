@@ -40,7 +40,7 @@ if(!function_exists('is_already_in_use')){
 
 if(!function_exists('redirect')){
     function redirect($page){
-        header('Location:'.$page.$_SESSION['id']);
+        header('Location:'.$page);
         exit();
     }
 }
