@@ -34,6 +34,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/profil.css" rel="stylesheet">
+
 
   <!-- =======================================================
   * Template Name: Vesperr - v4.8.1

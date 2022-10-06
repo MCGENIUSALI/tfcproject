@@ -27,7 +27,7 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
     $_SESSION['user_id'] = $user->id;
     $_SESSION['nom'] = $user->nom;
 
-    redirect('profil.php');
+    redirect('profil.php?id='.$user->id);
   }else{
     $errors[]="Combinaison Username/Numero paiement incorrecte!";
     saveInput();

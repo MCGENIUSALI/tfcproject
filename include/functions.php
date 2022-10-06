@@ -1,21 +1,4 @@
 <?php
-   /* if(!function_exists('not_empty')){
-        function not_empty($fields=[]){
-            if(count($fields) != 0){
-                foreach($fields as $field){
-                    if(empty($_POST[$field]) || trim($field == "")){
-                        return false;
-                    }
-                }
-            return true; 
-            }
-        }
-    }
-*/
-
-
-
-
 
 if(!function_exists('e')){
     function e($string){
@@ -24,6 +7,37 @@ if(!function_exists('e')){
         }
     }
 }
+
+if(!function_exists('get_avatar_url')){
+    function get_avatar_url($email){
+        return "http://gravatar.com/avatar/".md5(strtolower(trim(e($email))));
+    }
+}
+
+
+if(!function_exists('get_session')){
+    function get_session($key){
+        if($key){
+        return !empty($_SESSION[$key]) ? 
+        e($_SESSION[$key])
+        : null;
+        }
+    }
+}
+
+
+
+if(!function_exists('findUserById')){
+    function findUserById($id){
+       global $db;
+       $req = $db->prepare('SELECT nom, postnom, email FROM membre WHERE id = ?');
+        $req->execute([$id]);
+        $data = current($req->fetchAll(PDO::FETCH_OBJ));
+        $req->CloseCursor();
+        return $data;
+    }
+}
+ 
 
 
 if(!function_exists('is_already_in_use')){

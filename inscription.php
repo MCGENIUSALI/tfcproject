@@ -35,7 +35,7 @@ require('include/functions.php');
             'promotion' => $promotion,
             'numpaie' => $numpaie
           ]);
-          redirect('profil.php?id=');
+          redirect('profil.php');
         }else{
           $errors[]="Numéro paiement déjà utilisé ou incorrect (Veuillez SVP regulariser avec la caisse de l'ISIPA)";
           saveInput();

@@ -13,5 +13,8 @@
 }
 ?>
 
+<p>Cette platteforme est à caractère Educative et Professionnelle pour la gestion et l'organisation de nos projets</p>
+
+
 
 

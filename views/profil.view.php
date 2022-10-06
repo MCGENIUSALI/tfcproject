@@ -1,31 +1,38 @@
-<?php $title = "Profil " ?>
+<?php $title = "Profil "; ?>
+<?php include('include/constants.php'); ?>
+<?php include('partials/header.php'); ?>
 <!DOCTYPE html>
-<?php include('partials/header.php');?>
 <body>
-<div class="container">
-  <main>
-    <div class="bg-light p-5 m-5 rounded">
-    <h4>Mon profil</h4>
-    <div class="p-10">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <div class="p-2">
-          <h4><?= e($_SESSION['nom']) ?></h4>
-          <p><a href="">mail</a></p>
+  <div class="container">
+    <div class="col-md-12 col-sm-2">
+      <div class="card-container">
+        <div class="card">
+          <div class="font">
+            <div class="cover">              
+              <img src="assets/img/portfolio/covert.jpg" alt="" width="100%">
+            </div>
+            <div class="user">
+             <img class="img-circle" src="<?= get_avatar_url($user->email) ?>" alt="Image de profil de <?= e($user->nom) ?>" >
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3><?= $user->nom ." ".$user->postnom ?></h3>
+                <p>Compte mail: <a href="<?= 'mailto:'.$user->email ?>" target="_blanc"><?= $user->email ?></a></p>
+                <p>Cette platteforme est à caractère Educative et <br> Professionnelle pour la gestion et l'organisation de nos projets</p>
+                <button type="button" class="btn btn-primary">Ouvrir Workspace </button> <button type="button" class="btn btn-primary">Modifier profil</button> <button type="button" class="btn btn-secondary">Créer Workspace</button>   
+            </div>
+              <hr>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
-
-    <hr class="col-3 col-md-2 mb-5 m-2">
-  <div class="chef">
-    <h4>Gérer Workspace</h4>
-        <p class="lead">Dévenez professionnelle dans la gestion de vos projets Avec tous les outils possibles <br> pour les méner à bien.</p>
-        <a class="btn btn-lg btn-primary rounded-pill" href="#" role="button">Créer Workspace &raquo;</a>
-      </div>
     </div>
-  </main>
+  </div>
 </body>
 </html>
 
-<?php include('partials/footer.php'); ?>
+
 
 
 
