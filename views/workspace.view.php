@@ -1,4 +1,5 @@
 <?php $title = "Workspace "; ?>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -34,7 +35,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/profil.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/Kanban.css">
+  <link rel="stylesheet" href="assets/css/work.css"></link>
+
 
 </head>
 
@@ -68,34 +70,13 @@
       </div>
     </div>
   </header>
-    <div class="port">
-      <div class="todo-container">
-        <div class="etat">
-          <p class="title">Backlog/idées</p>
-          <div class="todo">
-            <p class="text">Gérer projet</p>
-            <span class="close">&times;</span>
-            <p class="user">Par Alipana...</p>
-          </div>
-          <button id="add_btn">+ Ajouter tâche</button>
-        </div>
-        <div class="etat">
-          <p class="title">A faire</p>
-          <button id="add_btn">+ Ajouter tâche</button>
-        </div>
-        <div class="etat">
-          <p class="title">En cours</p>
-          <button id="add_btn">+ Ajouter tâche</button>
-        </div>
-        <div class="etat">
-          <p class="title">Réalisé</p>
-          <button id="add_btn">+ Ajouter tâche</button>
-        </div>
-      </div>
-      <div class="chatbox">
-        <p class="chat">Discussions</p>
-      </div>
+  <div id="addTodoListDiv">
+        <input id="addTodoListInput" class="comment">
+        <button id="addTodoListButton" class="btn-save">Nouveau Sticker</button>
     </div>
-  </div>
-  <script src="assets/kanban/js/main.js" type="module"></script>
+    
+    <div id="root"></div>
+</div>
+<script src="assets/js/APIflow.js"></script>
 </body>
+</html>

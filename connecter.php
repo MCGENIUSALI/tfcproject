@@ -12,7 +12,7 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
  
  extract($_POST);
 
-  $q = $db->prepare('SELECT id, nom FROM membre 
+  $q = $db->prepare('SELECT id, nom FROM etudiant 
   WHERE nom = :nom and numpaie = :numpaie');
 
   $q->execute([
@@ -26,7 +26,6 @@ if(!empty($_POST['nom']) && !empty($_POST['numpaie']) and isset($_POST['nom']) &
     $user = $q->fetch(PDO::FETCH_OBJ);
     $_SESSION['user_id'] = $user->id;
     $_SESSION['nom'] = $user->nom;
-
     redirect('profil.php?id='.$user->id);
   }else{
     $errors[]="Combinaison Username/Numero paiement incorrecte!";

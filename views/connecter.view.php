@@ -17,11 +17,11 @@
             <?php include("partials/errors.php") ?>
               <div class="col-sm-12">
                 <label for="lastName" class="form-label">Nom Utilisateur</label>
-                <input type="text" name="nom" class="form-control" id="lastName" placeholder="" value="<?= getInput('nom') ?>" >
+                <input type="text" name="nom" class="form-control" id="lastName" placeholder="" value="<?= getInput('nm') ?>" >
               </div>
 
               <div class="col-sm-12">
-                <label for="lastName"  class="form-label">Numéro Paiement</label>
+                <label for="lastName"  class="form-label">Code</label>
                 <input type="password" name="numpaie" class="form-control" id="lastName" placeholder="" value="">
               </div>
             </div>

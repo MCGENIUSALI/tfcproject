@@ -19,15 +19,27 @@
                 <h3><?= $user->nom ." ".$user->postnom ?></h3>
                 <p>Compte mail: <a href="<?= 'mailto:'.$user->email ?>" target="_blanc"><?= $user->email ?></a></p>
                 <p>Cette platteforme est à caractère Educative et <br> Professionnelle pour la gestion et l'organisation de nos projets</p>
-                <button type="button" class="btn btn-primary">Ouvrir Workspace </button> <button type="button" class="btn btn-primary">Modifier profil</button> <button type="button" class="btn btn-secondary">Créer Workspace</button>   
+                <button type="button" class="btn btn-primary">Modifier profil</button> <a href="creaWSP.php"><button type="button" class="btn btn-secondary">Créer Workspace</button></a>  
             </div>
               <hr>
+                <div>
+                      <div class="card" style="width: 18rem; margin:2rem">
+                      <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <button type="button" class="btn btn-primary">Ouvrir Workspace </button>
+                         </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    <br>
   </div>
 </body>
 </html>

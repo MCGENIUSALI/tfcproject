@@ -17,12 +17,12 @@
             <?php include("partials/errors.php") ?>
               <div class="col-sm-12">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control"  id="nom" name="nom" placeholder="" value="<?= getInput('nom') ?>" >
+                <input type="text" class="form-control"  id="nom" name="nm" placeholder="" value="<?= getInput('nm') ?>" >
               </div>
 
               <div class="col-sm-8">
                 <label for="postnom" class="form-label">Postnom</label>
-                <input type="text" class="form-control" id="postnom" name="postnom" placeholder="" value="<?= getInput('postnom') ?>" >
+                <input type="text" class="form-control" id="postnom" name="postnm" placeholder="" value="<?= getInput('postnm') ?>" >
               </div>
 
               <div class="col-sm-4">
@@ -41,15 +41,15 @@
 
             <div class="col-md-6">
               <label for="promotion" class="form-label" >Promotion</label>
-              <select class="form-select" id="promotion" name="promotion" value="<?= getInput('sexe') ?>" >
+              <select class="form-select" id="promotion" name="promotion" value="<?= getInput('promoFK') ?>" >
                 <option value="">Choisir...</option>
                 <option>United States</option>
               </select>
             </div>
 
             <div class="col-sm-6">
-                <label for="numerorecu" class="form-label" >Numéro Paiement</label>
-                <input type="password" class="form-control" id="numerorecu" name="numpaie" placeholder="" value="" >
+                <label for="numerorecu" class="form-label" >Code</label>
+                <input type="password" class="form-control" id="numerorecu" name="code" placeholder="" value="" >
               </div>
             </div>
           <hr class="my-4">

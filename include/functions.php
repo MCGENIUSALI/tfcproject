@@ -30,7 +30,7 @@ if(!function_exists('get_session')){
 if(!function_exists('findUserById')){
     function findUserById($id){
        global $db;
-       $req = $db->prepare('SELECT nom, postnom, email FROM membre WHERE id = ?');
+       $req = $db->prepare('SELECT nom, postnom, email FROM etudiant WHERE id = ?');
         $req->execute([$id]);
         $data = current($req->fetchAll(PDO::FETCH_OBJ));
         $req->CloseCursor();
